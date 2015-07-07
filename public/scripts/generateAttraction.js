@@ -9,11 +9,13 @@ $(document).ready(function () {
 		config.$all.find('.add').on('click', function () {
 			var attraction = config.$all.find(':selected').data();
 			new config.constructor(attraction);
+			
 		});
 		config.all.forEach(function (attraction) {
 			var $option = $('<option></option>').text(attraction.name).data(attraction);
 			config.$all.find('select').append($option);
 		});
+	
 		return {
 			eraseMarker: function () {
 				this.marker.setMap(null);

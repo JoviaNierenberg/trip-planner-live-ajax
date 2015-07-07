@@ -11,6 +11,7 @@ $(document).ready(function () {
 			.buildItineraryItem()
 			.drawItineraryItem();
 		currentDay.restaurants.push(this);
+
 	}
 
 	Restaurant.prototype = generateAttraction({
@@ -18,8 +19,15 @@ $(document).ready(function () {
 		$listGroup: $('#my-restaurants .list-group'),
 		$all: $('#all-restaurants'),
 		all: all_restaurants,
-		constructor: Restaurant
+		constructor: Restaurant,
+		post: this.add
 	});
+
+	// Restaurant.prototype.add =  function(){
+	// 	$.post("/restaraunts",function(data){
+	// 			alert("ANYTHING")
+	// 		})
+	// }
 
 	Restaurant.prototype.delete = function () {
 		var index = currentDay.restaurants.indexOf(this),
